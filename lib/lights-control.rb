@@ -40,7 +40,13 @@ class LightsControl
         c.power_off
         true
       when /PROGRAM#(\d)/
-        c.program(PROGRAM_MAP[$1])
+        action = PROGRAM_MAP[$1.to_i]
+        if action
+          c.program(action)
+          true
+        else
+          false
+        end
       else
         false
       end
