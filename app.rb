@@ -9,6 +9,8 @@ require 'lights-control'
 enable :sessions
 set :session_secret, SecureRandom.hex(64)
 
+set :bind, '0.0.0.0'
+
 get '/', provides: 'html' do
   message = session[:message]
   session[:message] = ""
@@ -21,7 +23,7 @@ end
 
 get '/lights', provides: 'json' do
   JSON.pretty_generate({
-    "status": "ready"
+    "status" => "ready"
   })
 end
 
@@ -44,8 +46,8 @@ def command_success action
     redirect "/"
   else
     JSON.pretty_generate({
-      "command": action,
-      "status": "sent"
+      "command" => action,
+      "status"  => "sent"
     })
   end
 end
@@ -57,8 +59,8 @@ def command_invalid action
     redirect "/"
   else
     JSON.pretty_generate({
-      "command": action,
-      "status": "invalid"
+      "command" => action,
+      "status"  => "invalid"
     })
   end
 end
@@ -70,8 +72,8 @@ def command_failure action
     redirect "/"
   else
     JSON.pretty_generate({
-      "command": action,
-      "status": "failure"
+      "command" => action,
+      "status"  => "failure"
     })
   end
 end
