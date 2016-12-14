@@ -10,7 +10,7 @@
       color: #FFF;
     }
 
-    h1 {
+    h1, h2 {
       font-family: sans-serif;
     }
 
@@ -64,6 +64,11 @@
 </head>
 <body>
   <h1>LIGHTS CONTROL</h1>
+  <% if message %>
+  <div class="messages">
+  <h2><%= message %></h2>
+  </div>
+  <% end %>
   <hr class="lights">
   <form action="/lights" method="post" accept-charset="utf-8">
     <div class="primary-buttons">
