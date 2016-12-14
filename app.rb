@@ -2,10 +2,12 @@ $:.unshift File.join(File.dirname(__FILE__), 'lib')
 
 require 'erb'
 require 'json'
+require 'securerandom'
 require 'sinatra'
 require 'lights-control'
 
 enable :sessions
+set :session_secret, SecureRandom.hex(64)
 
 get '/', provides: 'html' do
   message = session[:message]
