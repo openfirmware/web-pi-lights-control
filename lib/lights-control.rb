@@ -28,14 +28,17 @@ class LightsControl
     if !is_valid_action? action
       false
     else
-      c = PiLightsControl::Command.new(ENV['GPIO_PIN'])
+      c = PiLightsControl::Command.new(ENV['GPIO_PIN'].to_i)
       case action
       when "ON"
         c.power_on
+        true
       when "SYNC"
         c.sync_lights
+        true
       when "OFF"
         c.power_off
+        true
       when /PROGRAM#(\d)/
         c.program(PROGRAM_MAP[$1])
       else
