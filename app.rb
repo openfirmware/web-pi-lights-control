@@ -11,6 +11,8 @@ set :session_secret, SecureRandom.hex(64)
 
 set :bind, '0.0.0.0'
 
+puts "GPIO PIN: #{ENV['GPIO_PIN']}"
+
 get '/', provides: 'html' do
   message = session[:message]
   session[:message] = ""
