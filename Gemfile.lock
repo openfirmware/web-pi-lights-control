@@ -1,9 +1,14 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    gli (2.14.0)
+    pi-lights-control (1.0.0)
+      gli (~> 2.14.0)
+      rpi_gpio (~> 0.3.2)
     rack (1.6.5)
     rack-protection (1.5.3)
       rack
+    rpi_gpio (0.3.2)
     sinatra (1.4.7)
       rack (~> 1.5)
       rack-protection (~> 1.4)
@@ -14,6 +19,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  pi-lights-control
   sinatra
 
 BUNDLED WITH
