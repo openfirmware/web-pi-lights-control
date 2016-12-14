@@ -5,6 +5,7 @@ GEM
     pi-lights-control (1.0.0)
       gli (~> 2.14.0)
       rpi_gpio (~> 0.3.2)
+    puma (3.6.0)
     rack (1.6.5)
     rack-protection (1.5.3)
       rack
@@ -20,6 +21,7 @@ PLATFORMS
 
 DEPENDENCIES
   pi-lights-control
+  puma
   sinatra
 
 BUNDLED WITH
