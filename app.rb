@@ -1,3 +1,4 @@
+require 'erb'
 require 'json'
 require 'sinatra'
 
@@ -20,11 +21,16 @@ get '/lights', provides: 'json' do
 end
 
 post '/lights', provides: ['json', 'html'] do
+  action = ERB::Util.html_escape params[:action]
+
   if request.accept? 'text/html'
     # Use Post-Redirect-Get to avoid "Resubmit form" warnings
-    session[:message] = "Command Sent: #{params[:action]}"
+    session[:message] = "Command Sent: #{action}"
     redirect "/"
   else
-    JSON.pretty_generate(params)
+    JSON.pretty_generate({
+      "command": action,
+      "status": "sent"
+    })
   end
 end
