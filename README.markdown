@@ -2,6 +2,8 @@
 
 A web interface for controlling a specific set of Christmas lights from a Raspberry Pi.
 
+![Interface Preview on iOS](preview.png)
+
 This web app is part of [a series of blog posts on controlling Christmas lights from Arduino and Raspberry Pi devices](https://www.jamesbadger.ca/2016/11/04/arduino-christmas-lights-controller/).
 
 ## Usage
