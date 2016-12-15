@@ -26,7 +26,7 @@ Then either download an archive of this repo or clone it using git, and install 
 
 Now you should be able to run the app in the foreground:
 
-    $ ruby app.rb
+    $ sudo ruby app.rb
 
 The app will then be accessible on the Pi's IP on port 4567.
 
