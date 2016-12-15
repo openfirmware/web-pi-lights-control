@@ -10,6 +10,7 @@ enable :sessions
 set :session_secret, SecureRandom.hex(64)
 
 set :bind, '0.0.0.0'
+set :lock, true
 
 puts "GPIO PIN: #{ENV['GPIO_PIN']}"
 
