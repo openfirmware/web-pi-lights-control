@@ -10,3 +10,8 @@ This is a Systemd service for automatically running the web server when the Rasp
 4. Check the service status: `$ systemctl status web-pi-lights-control.service`
 
 That *should* be it.
+
+## Usage with System RVM
+
+Same as above, except use `rvm-web-pi-lights-control.service` and edit it for your installed Ruby version.
+

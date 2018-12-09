@@ -1,0 +1,26 @@
+[Unit]
+Description=web-pi-lights-control
+After=network.target
+
+# Uncomment for socket activation (see below)
+# Requires=puma.socket
+
+[Service]
+# Foreground process (do not use --daemon in ExecStart or config.rb)
+Type=simple
+
+# Preferably configure a non-privileged user
+User=pi
+
+# Specify the path to your puma application root
+WorkingDirectory=/home/pi/web-pi-lights-control
+
+# Helpful for debugging socket activation, etc.
+Environment=GPIO_PIN=12
+
+# The command to start Puma
+ExecStart=/usr/local/rvm/gems/ruby-2.3.7/wrappers/ruby app.rb
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
